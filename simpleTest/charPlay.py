@@ -18,9 +18,16 @@ def tierList(nOfRounds):
 
         # Finds worth for this round based on last round win/lose
         rock.newWorth = scissors.worth
-        paper.newWroth = well.worth + rock.worth
+        paper.newWorth = well.worth + rock.worth
         scissors.newWorth = paper.worth
         well.newWorth = rock.worth + scissors.worth
+
+        print("\n \n Round " + str(i) + " values: \n")
+        print("Rock = " + str(rock.worth))
+        print("Paper = " + str(paper.worth))
+        print("Scissors = " + str(scissors.worth))
+        print("Well = " + str(well.worth))
+
 
         # Sets those values for next round
         rock.worth = rock.newWorth
@@ -28,10 +35,7 @@ def tierList(nOfRounds):
         scissors.worth = scissors.newWorth
         well.worth = well.newWorth
 
-        print("\n \n Round " + str(i) + "values: \n")
-        print("Rock = " + str(rock.worth))
-        print("Paper = " + str(paper.worth))
-        print("Scissors = " + str(well.worth))
+
 
 
     return
