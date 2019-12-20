@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 class charPlay:
     
     def __init__(self):
-        self.worth=1.0
+        self.worth=.25
         self.newWorth=0.0
         self.worthHistory=[]
 
@@ -37,11 +37,19 @@ def tierList(nOfRounds):
 
         # Finds worth for this round based on last round win/lose
         rock.newWorth = scissors.worth
-        paper.newWorth = well.worth + rock.worth
+        paper.newWorth = (well.worth + rock.worth)
         scissors.newWorth = paper.worth
-        well.newWorth = rock.worth + scissors.worth
-        
+        well.newWorth = (rock.worth + scissors.worth)
 
+        # Normalizes values around one point per player
+        tempNorm = rock.newWorth + paper.newWorth + scissors.newWorth + well.newWorth
+        
+        rock.newWorth = rock.newWorth/tempNorm
+        paper.newWorth = paper.newWorth/tempNorm
+        scissors.newWorth = scissors.newWorth/tempNorm
+        well.newWorth = well.newWorth/tempNorm
+
+        
         
         # Adds the worth for this round to a list to track over time
         rock.worthHistory.append(rock.worth)
