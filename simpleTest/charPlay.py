@@ -9,6 +9,22 @@ class charPlay:
 
 
 
+def tierHistPrint(rockWorthHistory, paperWorthHistory, scissorsWorthHistory, wellWorthHistory):
+
+    # Plots the worth over the course of the rounds
+    plt.plot(rockWorthHistory, label='Rock')
+    plt.plot(paperWorthHistory, label='Paper')
+    plt.plot(scissorsWorthHistory, label='Scissors')
+    plt.plot(wellWorthHistory, label="Well")
+    plt.ylabel('Worth')
+    plt.xlabel('Round')
+    plt.legend()
+    plt.show()
+    
+    return
+
+
+
 def tierList(nOfRounds):
 
     # Creates the chars
@@ -24,7 +40,9 @@ def tierList(nOfRounds):
         paper.newWorth = well.worth + rock.worth
         scissors.newWorth = paper.worth
         well.newWorth = rock.worth + scissors.worth
+        
 
+        
         # Adds the worth for this round to a list to track over time
         rock.worthHistory.append(rock.worth)
         paper.worthHistory.append(paper.worth)
@@ -44,15 +62,13 @@ def tierList(nOfRounds):
         scissors.worth = scissors.newWorth
         well.worth = well.newWorth
 
-    # Plots the worth over the course of the rounds
-    plt.plot(rock.worthHistory, label='Rock')
-    plt.plot(paper.worthHistory, label='Paper')
-    plt.plot(scissors.worthHistory, label='Scissors')
-    plt.plot(well.worthHistory, label="Well")
-    plt.ylabel('Worth')
-    plt.xlabel('Round')
-    plt.legend()
-    plt.show()
+    # End of For loop
+
+
+    # Calls graph creation function
+    tierHistPrint(rock.worthHistory, paper.worthHistory, scissors.worthHistory, well.worthHistory)
+
+
 
 
 
