@@ -1,0 +1,16 @@
+Create a generalizable version of this algorithm (one which can simply take a list of win loss as a 2d array and do the calculations (using percentage)
+
+Make a gradient boost decission tree with simulated data for rock/paper/scissors/well. Make sure that it ends up generally agreeing with our ranking algorithm
+
+Use Smash.gg's API to create matchup win/loss ratios (matchup charts) based on character results
+
+Use Smash.gg API to build a large training data set for the GDB, and train it.
+
+Compare findings with lots of tweeks.
+
+Manually build a GDB in Python, convert our code to use that
+
+Attempt to formally prove and understand the work 
+
+Ask for guidance about further research into this field w/ qualified prof
+
