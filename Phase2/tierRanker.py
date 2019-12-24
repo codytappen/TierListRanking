@@ -2,25 +2,23 @@ import matplotlib.pyplot as plt
 
 class charPlay:
     
-    def __init__(self):
+    def __init__(self, name):
+        self.name = name
         self.worth=1.0
         self.newWorth=0.0
         self.worthHistory=[]
 
 
-# Modify to accept a single list containing all history lists
-
-#def tierHistPrint(rockWorthHistory, paperWorthHistory, scissorsWorthHistory, wellWorthHistory):
-#
-#    # Plots the worth over the course of the rounds
-#    plt.plot(rockWorthHistory, label='Rock')
-#    plt.plot(paperWorthHistory, label='Paper')
-#    plt.plot(scissorsWorthHistory, label='Scissors')
-#    plt.plot(wellWorthHistory, label="Well")
-#    plt.ylabel('Worth')
-#    plt.xlabel('Round')
-#    plt.legend()
-#    plt.show()
+# Accepts a list of worth history lists to graph and a list of characters to label the graphs
+def tierHistPrint(listOfChars):
+    
+    # Plots the worth over the course of the rounds
+    for i in range(0, len(listOfChars)):
+        plt.plot(listOfChars[i].worthHistory, label=listOfChars[i].name)
+    plt.ylabel('Worth')
+    plt.xlabel('Round')
+    plt.legend()
+    plt.show()
     
     return
 
@@ -56,10 +54,10 @@ def tierList(listOfChars, 2dWinLoss, nOfRounds):
 def tierListPer(nOfRounds):
 
     # Creates the chars
-    rock = charPlay()
-    paper = charPlay()
-    scissors = charPlay()
-    well = charPlay()
+    rock = charPlay("Rock")
+    paper = charPlay("Paper")
+    scissors = charPlay("Scissors")
+    well = charPlay("Well")
     
     for i in range(0,nOfRounds):
 
@@ -100,7 +98,6 @@ def tierListPer(nOfRounds):
         well.worth = well.newWorth
 
     # End of For loop
-
 
     # Calls graph creation function
     tierHistPrint(rock.worthHistory, paper.worthHistory, scissors.worthHistory, well.worthHistory)
