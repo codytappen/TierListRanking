@@ -24,7 +24,7 @@ def tierHistPrint(listOfChars):
 
 
 # Creates the tierlist
-def tierList(listOfChars, 2dWinLoss, nOfRounds):
+def tierList(listOfChars, TwoDWinLoss, nOfRounds):
 
     
     # Full algorithm
@@ -41,7 +41,7 @@ def tierList(listOfChars, 2dWinLoss, nOfRounds):
             
             # Adds the value for each character matchup
             for k in range(0, len(listOfChars)):
-                listOfChars[j].newWorth+=listOfChars[k].worth*2dWinLoss[j][k]
+                listOfChars[j].newWorth+=listOfChars[k].worth*TwoDWinLoss[j][k]
             
             normBase+=listOfChars[j].newWorth
             
@@ -63,10 +63,12 @@ def tierList(listOfChars, 2dWinLoss, nOfRounds):
 def main():
 
     # Simple Rock paper scissors test case
-    RPSW = [charPlay(Rock),charPlay(Paper),charPlay(Scissors),charPlay(Well)]
+    RPSW = [charPlay("Rock"),charPlay("Paper"),charPlay("Scissors"),charPlay("Well")]
 
-    2dWinLose = [[0,0.25,0.75,0.25],[0.75,0,0.25,0.75],[0.25,0.75,0,0.25],[0.75,0.25,0.75,0]
+    WinLose = [[0,0.25,0.75,0.25],[0.75,0,0.25,0.75],[0.25,0.75,0,0.25],[0.75,0.25,0.75,0]]
     
-    tierList(RPSW,2dWinLose,20)
+    tierList(RPSW,WinLose,20)
+
+    return
 
 
