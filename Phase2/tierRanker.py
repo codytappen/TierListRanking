@@ -84,3 +84,20 @@ def main():
     return
 
 
+# Allows for simple data entry
+def buildCharData(numOfChars):
+    
+    charList=[]
+
+    WinLose=[][]
+    
+    for i in range(0,numOfChars):
+        print("Character name?")
+        for j in range(0, numOfChars):
+            
+
+    return
+
+
+
+
