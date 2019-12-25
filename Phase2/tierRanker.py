@@ -62,10 +62,22 @@ def tierList(listOfChars, TwoDWinLoss, nOfRounds):
 
 def main():
 
-    # Simple Rock paper scissors test case
-    RPSW = [charPlay("Rock"),charPlay("Paper"),charPlay("Scissors"),charPlay("Well")]
+    # Building middle complexity melee input data
+    meleeChars = []
 
-    WinLose = [[0,0.25,0.75,0.25],[0.75,0,0.25,0.75],[0.25,0.75,0,0.25],[0.75,0.25,0.75,0]]
+
+
+    # Creates all chars
+
+    meleeNames = ["Fox","Falco","Marth","Sheik","Jigglypuff","Peach","Falcon","Pikachu","Samus","MdMario","Yoshi","Luigi","Ganon","Mario","YoungLink","Donkey","link","GameAndWatch","Roy","Mewtwo","Zelda","Ness","Pichu","Bowser","Kirby"]
+    
+    for j in range(0,16):
+        meleeChars.append(meleeNames[j])
+
+    fox =    [.5,.5,.5,.6,.6,.6,.6,.7,.7,.5,.8,.7,.7,.6,.7,.7,.8,.8,.7,.8,.8,.8,.8,.8,.8]
+    falco =  [.5,.5,.5,.5,.5,.5,.5,.7,.7,.5,.6,.8,.7,.6,.6,
+            
+
     
     tierList(RPSW,WinLose,20)
 
