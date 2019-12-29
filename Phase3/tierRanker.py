@@ -60,14 +60,40 @@ def tierList(listOfChars, TwoDWinLoss, nOfRounds):
     return
 
 
-def main():
+def buildList(:
 
     # Simple Rock paper scissors test case
-    RPSW = [charPlay("Rock"),charPlay("Paper"),charPlay("Scissors"),charPlay("Well")]
+    cList = []
 
-    WinLose = [[0,0.25,0.75,0.25],[0.75,0,0.25,0.75],[0.25,0.75,0,0.25],[0.75,0.25,0.75,0]]
-    
-    tierList(RPSW,WinLose,20)
+    WinLose = [][]
+
+    # Creates all character data types
+    for i in range(0, 100):
+        print("Enter character name, 0 to stop")
+        tempStr = str(input())
+
+        if(tempStr != "0"):
+            cList.append(charPlay(tempStr))
+        else:
+            break
+    # End of loop
+
+
+    # Creates win/loss chart
+
+    print("Please enter the following as a value from 0 to 1")
+
+    for i in range(0, len(cList)):
+        tempList = []
+        
+        for j in range(0, len(cList)):
+            print("How does " + cList[i].name + " do against " cList[j].name)
+            tempList.append(float(input()))
+
+        cList.append(tempList)
+
+    # End of loop
+
 
     return
 
