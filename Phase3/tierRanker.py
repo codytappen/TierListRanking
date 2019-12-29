@@ -60,12 +60,13 @@ def tierList(listOfChars, TwoDWinLoss, nOfRounds):
     return
 
 
-def buildList(:
+def buildList():
 
-    # Simple Rock paper scissors test case
+    # List of Characters
     cList = []
 
-    WinLose = [][]
+    # Matchup Chart
+    WinLose = [[]]
 
     # Creates all character data types
     for i in range(0, 100):
@@ -87,13 +88,23 @@ def buildList(:
         tempList = []
         
         for j in range(0, len(cList)):
-            print("How does " + cList[i].name + " do against " cList[j].name)
+            print("How does " + cList[i].name + " do against " + cList[j].name)
             tempList.append(float(input()))
 
-        cList.append(tempList)
+        WinLose.append(tempList)
 
     # End of loop
+    
 
+    # Test runs
+
+    tierList(cList, WinLose, 10)
+
+    tierList(cList, WinLose, 20)
+
+    tierList(cList, WinLose, 50)
+
+    tierList(cList, WinLose, 100)
 
     return
 
