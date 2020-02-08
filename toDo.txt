@@ -16,3 +16,4 @@ Attempt to formally prove and understand the work
 
 Ask for guidance about further research into this field w/ qualified prof
 
+Create ML based self-valuation system for elements
