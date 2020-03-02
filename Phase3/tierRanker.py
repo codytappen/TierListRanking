@@ -31,7 +31,7 @@ def tierList(listOfChars, TwoDWinLoss, nOfRounds):
     for i in range(0,nOfRounds):
         
         # Value used to keep values normalized
-        normBase=0.0
+        normBase=len(listOfChars)
 
         # Finds new worth value for each char based on previous round
         # and matchup table
@@ -66,7 +66,7 @@ def buildList():
     cList = []
 
     # Matchup Chart
-    WinLose = [[]]
+    WinLose = []
 
     # Creates all character data types
     for i in range(0, 100):
@@ -94,7 +94,8 @@ def buildList():
         WinLose.append(tempList)
 
     # End of loop
-    
+
+    print(WinLose)    
 
     # Test runs
 
