@@ -31,17 +31,17 @@ def tierList(listOfChars, TwoDWinLoss, nOfRounds):
     for i in range(0,nOfRounds):
         
         # Value used to keep values normalized
-        normBase=len(listOfChars)
+        normBase=0.0
 
         # Finds new worth value for each char based on previous round
         # and matchup table
         for j in range(0, len(listOfChars)):
 
-            listOfChars[j].newWorth=0
             
             # Adds the value for each character matchup
             for k in range(0, len(listOfChars)):
                 listOfChars[j].newWorth+=listOfChars[k].worth*TwoDWinLoss[j][k]
+
             
             normBase+=listOfChars[j].newWorth
             
@@ -89,7 +89,7 @@ def buildList():
         
         for j in range(0, len(cList)):
             if (i == j):
-                tempList.append(0.5)
+                tempList.append(0.0)
                 continue
 
             print("How does " + cList[i].name + " do against " + cList[j].name)
