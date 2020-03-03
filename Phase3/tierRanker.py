@@ -88,8 +88,12 @@ def buildList():
         tempList = []
         
         for j in range(0, len(cList)):
+            # Handles repeat data entry
             if (i == j):
                 tempList.append(0.0)
+                continue
+            if (i > j):
+                tempList.append(1 - WinLose[j][i])
                 continue
 
             print("How does " + cList[i].name + " do against " + cList[j].name)
