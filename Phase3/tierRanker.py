@@ -88,6 +88,10 @@ def buildList():
         tempList = []
         
         for j in range(0, len(cList)):
+            if (i == j):
+                tempList.append(0.5)
+                continue
+
             print("How does " + cList[i].name + " do against " + cList[j].name)
             tempList.append(float(input()))
 
