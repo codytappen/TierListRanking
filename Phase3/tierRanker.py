@@ -90,7 +90,7 @@ def buildList():
         for j in range(0, len(cList)):
             # Handles repeat data entry
             if (i == j):
-                tempList.append(0.0)
+                tempList.append(0.5)
                 continue
             if (i > j):
                 tempList.append(1 - WinLose[j][i])
